@@ -1,19 +1,21 @@
-startDate=Time.gm(1901,"jan",1)
-endDate=(2000,"dec",31)
+require 'date'
 
-plusDate = (60 * 60 * 24)
+startDate=Date.new(1901,1,1)
+endDate=Date.new(2000,12,31)
 
 countOfSunday = 0
 
-while True:
-    if startDate == endDate:
+while (true)
+    if (startDate === endDate)
         break;
+    end
     
-    if startDate.weekday() == 6 and startDate.day == 1: #일요일이고 1일
+    if startDate.wday == 0 and startDate.mday == 1: #일요일이고 1일
         countOfSunday+=1
-        print (startDate)
+        puts startDate
+    end
     
-    startDate = startDate + plusDay #하루 증가
-    
+    startDate = startDate + 1 #하루 증가
+end    
         
-print (countOfSunday)
+puts countOfSunday
