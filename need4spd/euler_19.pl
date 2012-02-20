@@ -7,19 +7,21 @@ use warnings;
 my $start_date = DateTime->new(
     year=>1901,
     month=>1,
-    day=>1
-)
+    day=>1,
+    
+);
 
 my $end_date = DateTime->new(
-    yea=>2000,
+    year=>2000,
     month=>12,
-    day=>31
-)
+    day=>31,
+    
+);
 
 my $count_of_sunday = 0;
 
 while (1) {
-    if((DateTime->compare($start_date, $end_date) == 0) {
+    if(DateTime->compare($start_date, $end_date) == 0) {
         last;
     }
     
