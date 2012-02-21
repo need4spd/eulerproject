@@ -1,6 +1,6 @@
 def getDivisors(num)
     
-  divisors=Array.new
+  divisors=Array.new(0)
   startnum = 1
   
   if num==1
@@ -23,10 +23,10 @@ def getDivisors(num)
 end
 
 targetnum=10000
-resultList=Array.new
+resultList=Array.new(1, 0)
 
 while (true)
-  if resultList.index(targetnum) > 0
+  if resultList.count(targetnum) > 0
      targetnum=targetnum-1
      continue      
   end      
