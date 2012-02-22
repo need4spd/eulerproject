@@ -27,11 +27,7 @@ sampleFile=open("names.txt", "r")
     
 names=sampleFile.readlines()
 namesStr=names[0]
-
-print("length : {0}".format(len(namesStr)))
-
 namesStr=namesStr.rstrip("\n")
-print("length : {0}".format(len(namesStr)))
 
 #print (namesStr.replace("\"","").split(","))
 nameList = namesStr.replace("\"","").split(",")
