@@ -8,7 +8,7 @@ def getDivisors(num)
     return divisors
   end
   
-  while True
+  while true
     
     if num%startnum == 0
         divisors.push(startnum)
@@ -28,18 +28,18 @@ resultList=Array.new(1, 0)
 while (true)
   if resultList.count(targetnum) > 0
      targetnum=targetnum-1
-     continue      
+     next      
   end      
         
   divisors=getDivisors(targetnum) #targetnum 220
-  sumOfDivisors=sum(divisors) #sumofDivisors 284
+  sumOfDivisors=divisors.inject(:+) #sumofDivisors 284
         
   tempDivisors=getDivisors(sumOfDivisors)
-  tempSumOfDivisors=sum(tempDivisors)
+  tempSumOfDivisors=tempDivisors.inject(:+)
         
   if targetnum==tempSumOfDivisors and targetnum != sumOfDivisors
-     resultList.append(targetnum)
-     resultList.append(sumOfDivisors)
+     resultList.push(targetnum)
+     resultList.push(sumOfDivisors)
   end
   
   targetnum=targetnum-1
@@ -50,3 +50,4 @@ while (true)
 end
 
 puts "result #{resultList}"
+puts resultList.inject(:+)
