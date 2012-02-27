@@ -7,7 +7,7 @@ sub fib {
     
     my ($a, $b) = (0, 1);
     
-    foreach (0..$n) {
+    foreach (0..$n-1) {
         ($a, $b) = ($b, $a+$b);
     }
     
