@@ -12,13 +12,13 @@ def prime(num) :
 	
 list=[]
 a=600851475143
-b=1
+b=2
 max=0
 while(b <= a) :
 	if(a%b == 0 and prime(b) == True) :
 		a = a/b
 		list.append(b)
 		if(max < b) : max=b
-	b=b+1	
+	else : b=b+1	
 
 print(max)
