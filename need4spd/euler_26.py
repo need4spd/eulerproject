@@ -1,32 +1,25 @@
-def findRepeatNumLen(n):
-    r = 1 / n
-    r = str(r)[2:] #0. 제거
-    
-    repeat_cnt = 1
-    
-    if len(r) == 1:
-        return 1
-    
-    for i in range(len(r)):
+def check_cycle(d):
+    remain_list = list()
+    dividend = 1
+    n = 0
+    while True:
+        remain = dividend % d # 나머지
         
-        repeat_cnt = 1
-        
-        for j in range(len(r)-1):
-            t1 = r[i]
-            t2 = r[j+1]
-            
-            if t1 == t2:
-                return repeat_cnt
-            else:
-                repeat_cnt+=1
+        if remain in remain_list:
+            return n - remain_list.index(remain)
+        else:
+            remain_list.append(remain)
+            dividend = remain * 10
+            n += 1
 
-r=0
-maxlen=0
-
-for n in range(1, 1001):
-    length = findRepeatNumLen(n)
-    if maxlen < length:
-        maxlen = length
-        r = n
-    
-print (r)
+max_d = 0
+d = 2
+max_n = 0
+while d < 1000: 
+    temp = check_cycle(d)
+    if temp > max_n:
+        max_n = temp
+        max_d = d 
+    d += 1
+ 
+print(max_d)
