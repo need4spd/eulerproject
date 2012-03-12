@@ -1,0 +1,33 @@
+list1 = ["","one","two","three","four","five","six","seven","eight","nine"]
+list2 = ["ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
+list3 = ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
+hVal = "hundred"
+tVal = "thousand"
+aVal = "and"
+
+
+def underH(a):
+  if a >= 100:
+    return 0
+  if a < 10:
+    return list1[a]
+  elif a < 20:
+    return list2[a-10]
+  else:
+    return list3[int(a/10)] + list1[a%10]
+
+s=0
+for x in range(1,1001):
+  if x < 100:
+    s += len(underH(x))
+  elif x < 1000:
+    temp=list1[int(x/100)] + hVal
+    t = x%100
+    if t > 0:
+      temp+=aVal
+      temp+=underH(t)
+    s += len(temp)
+  else:
+    s +=len(list1[1]+tVal)
+
+print(s)
