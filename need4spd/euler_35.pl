@@ -22,15 +22,16 @@ sub get_circular_list {
     
     my @result_list=();
     my $loop_cnt = length $n - 1;
-    
+       
     push @result_list, $n;
     
     while ($loop_cnt > 0) {
         my $t = pop @n_list;
         unshift @n_list, $t;
         
-        my $st = join(@n_list, "");
+        my $st = join("", @n_list);
         push @result_list, $st;
+                
         $loop_cnt -= 1;
     }
     
@@ -49,7 +50,7 @@ foreach my $n ((0..999999)) {
     
     my @c_list = get_circular_list($n);
     my $all_prime = 1;
-    
+        
     foreach my $c (@c_list) {
         unless (isPrime($c)) {
             $all_prime = 0;
