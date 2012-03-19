@@ -13,25 +13,23 @@ def isPrime(n):
 
 # euler 24
 import itertools
- 
-l=list(range(1,10))
-permutations=list(itertools.permutations(l,9))
- 
+
 p=list()
-for t in permutations:
-    s="".join(str(n) for n in t)
-    p.append(s)
+for n in range(2,11):
+    l=list(range(1,n))
+    permutations=list(itertools.permutations(l,len(l)))
+ 
+    for t in permutations:
+        s="".join(str(n) for n in t)
+        p.append(s)
 
 p.sort()
-
-print (p[0])
 result = 0
 
 for n in p:
 
   if isPrime(n):
-    print(n)
-    if result < n:
-      result = n
+    if result < int(n):
+      result = int(n)
 
 print (result)
