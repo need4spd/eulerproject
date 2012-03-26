@@ -1,0 +1,2 @@
+d = dict(zip('ABCDEFGHIJKLMNOPQRSTUVWXYZ', range(1,27)))
+print (len([w for w in [w.strip('"') for w in open('euler_42_words.txt').read().split(',')] if sum([d[c] for c in w]) in [x*(x+1)/2 for x in range(1, 20)]])) 
