@@ -1,7 +1,7 @@
 def primefactors_limit_count(num):
 
   num_of_factors = 0
-  limit_cnt = 3
+  limit_cnt = 4
   
   startnum=2
   primeNumbers=set()
@@ -34,13 +34,13 @@ cnt_of_continue = 0
 while True:
   prime_factors = primefactors_limit_count(n)
   
-  if len(prime_factors) == 3:
+  if len(prime_factors) == 4:
     cnt_of_continue += 1
   else:
     cnt_of_continue = 0
   
-  if cnt_of_continue == 3:
-    print(n - 2)
+  if cnt_of_continue == 4:
+    print(n - 3)
     break
   n += 1
     
