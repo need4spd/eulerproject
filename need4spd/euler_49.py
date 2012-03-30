@@ -10,31 +10,26 @@ def isPrime(n):
         if n % x == 0:
             return False
     return True
-import itertools
+
+def is_permutatins(a,b,c):
+  s_a = list(str(a))
+  s_a.sort()
+  s_b = list(str(b))
+  s_b.sort()
+  s_c = list(str(c))
+  s_c.sort()
+  if s_a == s_b == s_c:
+    return True
+  else:
+    return False
   
-p=list()
-permutations=list(itertools.permutations(list(range(1,10)),4))
-for t in permutations:
-    s="".join(str(n) for n in t)
-    p.append(s)
-
-
-prime_list = [int(n) for n in p if isPrime(n)]
+prime_list = [int(n) for n in range(2, 10000) if isPrime(n)]
 prime_list.sort()
 
-index = 0
-while True:
-
-  if index+3 >= len(prime_list):
-    break
-    
-  temp_l = prime_list[index: index+3]
-  
-  a=temp_l[0]
-  b=temp_l[1]
-  c=temp_l[2]
-  
-  if b-a == c-a:
-    print (a,b,c,d)
-  
-  index += 1
+for a in prime_list:
+  for b in prime_list:
+    for c in prime_list:
+      if b-a == c-b and not b-a == 0:
+        if is_permutatins(a,b,c):
+          print (a,b,c)
+          break
