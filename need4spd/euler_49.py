@@ -23,7 +23,7 @@ def is_permutatins(a,b,c):
   else:
     return False
   
-prime_list = [int(n) for n in range(2, 10000) if isPrime(n)]
+prime_list = [int(n) for n in range(1000, 10000) if isPrime(n)]
 prime_list.sort()
 
 for a in prime_list:
