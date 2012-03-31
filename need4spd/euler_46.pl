@@ -61,13 +61,24 @@ sub any {
 }
 
 my $x = 5;
+
 while (1) {
+    #print "123123213123";
+    
     my @prime_list = &get_prime_number($x);
-    if (grep(/$x/, @prime_list)) {
+    
+    #print "@prime_list, $x \n";
+    my $tt=grep(/^$x$/, @prime_list);
+    
+    print "tt=$tt, x=$x \n";
+    
+    if (grep(/^$x$/, @prime_list)) {
         $x += 2;
+        #print "next\n";
         next;
     }
     
+    #print "d";
     my @temp_list = ();
     foreach my $n (1..sqrt($x)) {
         foreach my $p (@prime_list) {
@@ -86,10 +97,13 @@ while (1) {
     }
     
     if (!any(@temp_list)) {
-        print "$x";
+        print "result=$x";
         last;
     }
     
+        
     $x += 2;
+    
+    print "x=$x";
     
 }
