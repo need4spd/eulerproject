@@ -16,13 +16,14 @@ prime_list.sort()
 r = 0
 while True:
   r = sum(prime_list)
-  
-  if r > 1000:
-    del prime_list[len(prime_list) - 1]
-    continue
+  print (r, len(prime_list))
+  del prime_list[len(prime_list) - 1]
+  #if r > 1000:
+    #del prime_list[len(prime_list) - 1]
+    #continue
     
-  if isPrime(r):
-    print (r)
-    break
-  else:
-    del prime_list[len(prime_list) - 1]
+  #if isPrime(r):
+    #print (r)
+    #break
+  #else:
+    #del prime_list[len(prime_list) - 1]
