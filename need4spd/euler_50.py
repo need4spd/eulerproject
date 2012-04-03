@@ -22,3 +22,6 @@ result = 0
 [2,5,10,17,28,41,58,77,100]
 1) index ~ n까지의 합은
 sum(n) - prime_list[index]와 같다.
+
+index ~ n까지의 최고 term을 가진 소수를 찾았으니
+그다음은 n ~ 찾으면 된다.
