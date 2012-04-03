@@ -11,19 +11,35 @@ def isPrime(n):
             return False
     return True
 
-prime_list = [int(n) for n in range(2, 1001) if isPrime(n)]
-prime_list.sort()
-r = 0
+max = 1000000
+prime_list = [int(n) for n in range(2, max+1) if isPrime(n)]
+prime_list2 = [int(n) for n in range(2, max+1) if isPrime(n)]
+
+terms = 0
+r1 = 0
+r2 = 0
+
+result = 0
+
 while True:
-  r = sum(prime_list)
-  print (r, len(prime_list))
-  del prime_list[len(prime_list) - 1]
-  #if r > 1000:
-    #del prime_list[len(prime_list) - 1]
-    #continue
+
+  if (len(prime_list) == 0):
+    break
     
-  #if isPrime(r):
-    #print (r)
-    #break
-  #else:
-    #del prime_list[len(prime_list) - 1]
+  r1 = sum(prime_list)
+  
+  #print (r1, len(prime_list), terms)
+  if r1 > max:
+    del prime_list[len(prime_list) - 1]
+    continue
+    
+  if isPrime(r1):
+    if (terms < len(prime_list)):
+      terms = len(prime_list)
+      result = r1
+  
+  del prime_list[len(prime_list) - 1]
+
+    
+
+print (terms, result)
