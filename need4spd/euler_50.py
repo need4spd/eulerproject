@@ -13,33 +13,12 @@ def isPrime(n):
 
 max = 1000000
 prime_list = [int(n) for n in range(2, max+1) if isPrime(n)]
-prime_list2 = [int(n) for n in range(2, max+1) if isPrime(n)]
 
 terms = 0
-r1 = 0
-r2 = 0
-
+temp_r = 0
 result = 0
 
-while True:
-
-  if (len(prime_list) == 0):
-    break
-    
-  r1 = sum(prime_list)
-  
-  #print (r1, len(prime_list), terms)
-  if r1 > max:
-    del prime_list[len(prime_list) - 1]
-    continue
-    
-  if isPrime(r1):
-    if (terms < len(prime_list)):
-      terms = len(prime_list)
-      result = r1
-  
-  del prime_list[len(prime_list) - 1]
-
-    
-
-print (terms, result)
+[2,3,5,7,11,13,17,19,23,29,31...]
+[2,5,10,17,28,41,58,77,100]
+1) index ~ n까지의 합은
+sum(n) - prime_list[index]와 같다.

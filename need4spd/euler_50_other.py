@@ -11,8 +11,8 @@ def isPrime(n):
             return False
     return True
     
-max = 1000000
-primes = [int(n) for n in range(2, 1000001) if isPrime(n)]
+max = 100
+primes = [int(n) for n in range(2, max+1) if isPrime(n)]
 prime_sum = [0]
  
 sum = 0
