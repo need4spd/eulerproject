@@ -13,10 +13,10 @@ def isPrime(n):
 
 max = 1000000
 min = 100000
-#prime_list = [int(n) for n in range(min, max) if isPrime(n)]
+prime_list = [int(n) for n in range(min, max) if isPrime(n)]
 patterns = ['110001','101001','100101','100011','011001','010101','010011','001101','001011','000111']
 #patterns = ['11001','10101','10011','10001','10111','11011','11101']
-prime_list = [121313]
+#prime_list = [120383]
 for p in prime_list:
   for pat in patterns:
       replace_num_list = []
@@ -39,7 +39,7 @@ for p in prime_list:
       cnt = 0
       for n in replace_num_list:
         if int(n) > 99999 and isPrime(n):
-          print (p, n, int(n))
+          print (p, n)
           cnt += 1 
   
       if cnt == 8:
