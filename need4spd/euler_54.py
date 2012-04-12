@@ -21,22 +21,26 @@ def is_st_flush(cards):
   numbers=[]
   marks=[]
   number=""
+  mark = ""
   for card in cards:
-    numbers.append(card[0:1])
+    numbers.append(card[0:len(card)-1])
     if not card[1:2] in marks:
-      marks.append(card[1:2])
-    
-    for i in range(0,3):
-      if not (int(numbers[i+1]) - int(numbers[i])) == 1:
-        return False
-    
-    if len(marks) == 1:
-      return True
+      marks.append(card[len(card)-1:len(card)])
+  
+  print(number, numbers, mark, marks)
+  for i in range(0,3):
+    if not (int(numbers[i+1]) - int(numbers[i])) == 1:
+      return False
+  
+  if len(marks) == 1:
+    return True
   
   return False
       
-print(is_royal_flush(["KD", "KC", "6S", "3D", "7D"]))
-print(is_royal_flush(["10C", "JC", "QC", "KC", "AC"]))
+#print(is_royal_flush(["KD", "KC", "6S", "3D", "7D"]))
+#print(is_royal_flush(["10C", "JC", "QC", "KC", "AC"]))
+print(is_st_flush(["KD", "KC", "6S", "3D", "7D"]))
+print(is_st_flush(["7C", "8C", "9C", "10C", "11C"]))
 """      
 poker_txt=open("poker.txt", "r")
 
