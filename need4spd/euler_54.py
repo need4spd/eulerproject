@@ -4,13 +4,14 @@ def is_royal_flush(cards):
   number=""
   mark=""
   for card in cards:
-    numbers.append(card[0:1])
+    numbers.append(card[0:len(card)-1])
     if not card[1:2] in marks:
-      marks.append(card[1:2])
+      marks.append(card[len(card)-1:len(card)])
     
-    number = number + card[0:1]
-    mark = mark + card[1:2]
+    number = number + card[0:len(card)-1]
+    mark = mark + card[len(card)-1:len(card)]
   
+  print(number, mark, marks)
   if number == "10JQKA" and len(marks) == 1:
     return True
   else:
