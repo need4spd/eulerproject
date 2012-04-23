@@ -1,4 +1,4 @@
-max_loop_cnt = 50
+max_loop_cnt = 49
 """
 349 + 943 = 1292
 1292 + 2921 = 4213
@@ -12,18 +12,19 @@ def isPalindrome(n):
     return n_str == reverse_str
  
 result=0
-loop_cnt = 0
-for n in range(349, 350):
+
+for n in range(1, 10001):
+  loop_cnt = 0
   while(True):
     if loop_cnt == max_loop_cnt:
       break
     reverse_n = str(n)[::-1]
     n = n +  int(reverse_n)
     
-    print (n, reverse_n)
+    #print (n, reverse_n)
     
-    if isPalindrome(n):
-      print("palindorem..."+str(n))
+    if isPalindrome(n) and len(str(n)) > 1:
+      #print("palindorem..."+str(n))
       result += 1
       break
       
